@@ -1,0 +1,53 @@
+<div class="publication-item">
+    <div class="publication-image">
+    <img src="assests/paper_figures/vmatcher.png" alt="VMatcher Figure">
+    </div>
+    <div class="publication-content">
+    <div class="publication-header">
+        <div class="publication-title">VMatcher: State-Space Semi-Dense Local Feature Matching</div>
+        <span class="venue-badge preprint">Preprint</span>
+    </div>
+    <div class="publication-authors"><strong>Ali Youssef</strong></div>
+    <div class="publication-venue">Preprint</div>
+    <div class="publication-links">
+        <a href="#" onclick="toggleAbstract(event)">Abstract</a>
+        <a href="https://arxiv.org/pdf/2507.23371" target="_blank">PDF</a>
+        <a href="https://github.com/ayoussf/VMatcher" target="_blank">Code</a>
+        <a href="#" onclick="toggleBibtex(event)">BibTeX</a>
+    </div>
+    <div class="abstract-popup">
+        This paper introduces VMatcher, a hybrid Mamba-
+        Transformer network for semi-dense feature matching between
+        image pairs. Learning-based feature matching methods,
+        whether detector-based or detector-free, achieve stateof-
+        the-art performance but depend heavily on the Transformer's
+        attention mechanism, which, while effective, incurs
+        high computational costs due to its quadratic complexity.
+        In contrast, Mamba introduces a Selective State-
+        Space Model (SSM) that achieves comparable or superior
+        performance with linear complexity, offering significant efficiency
+        gains. VMatcher leverages a hybrid approach, integrating
+        Mamba's highly efficient long-sequence processing
+        with the Transformer's attention mechanism. Multiple
+        VMatcher configurations are proposed, including hierarchical
+        architectures, demonstrating their effectiveness
+        in setting new benchmarks efficiently while ensuring robustness
+        and practicality for real-time applications where
+        rapid inference is crucial.
+    </div>
+    <div class="bibtex-popup">
+            <button class="copy-bibtex-btn" onclick="copyBibtex(this)">Copy</button>
+            <pre>
+@misc{youssef2025vmatcherstatespacesemidenselocal,
+title={VMatcher: State-Space Semi-Dense Local Feature Matching}, 
+author={Ali Youssef},
+year={2025},
+eprint={2507.23371},
+archivePrefix={arXiv},
+primaryClass={cs.CV},
+url={https://arxiv.org/abs/2507.23371}, 
+}
+</pre>
+    </div>
+</div>
+<!-- <div class="publication-separator"></div> -->

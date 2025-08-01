@@ -1,0 +1,77 @@
+<div class="publication-item">
+    <div class="publication-image">
+        <img src="assests/paper_figures/nsdd.png" alt="Illustration of VMatcher's feature matching process">
+    </div>
+    <div class="publication-content">
+        <div class="publication-header">
+            <div class="publication-title">NeRF-Supervised Feature Point Detection and Description</div>
+            <span class="venue-badge eccvw">ECCVW</span>
+        </div>
+        <div class="publication-authors"><strong>Ali Youssef</strong>, Francisco Vasconcelos</div>
+        <div class="publication-venue">Computer Vision – ECCV 2024 Workshops</div>
+        <div class="publication-links">
+            <a href="#" onclick="toggleAbstract(event)">Abstract</a>
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-91989-3_7" target="_blank">PDF</a>
+            <a href="https://arxiv.org/pdf/2403.08156" target="_blank">arXiv</a>
+            <a href="https://github.com/ayoussf/SuperPoint-PrP" target="_blank">Code 1</a>
+            <a href="https://github.com/ayoussf/SiLK-PrP" target="_blank">Code 2</a>
+            <a href="#" onclick="toggleBibtex(event)">BibTeX</a>
+            <a href="https://doi.org/10.1007/978-3-031-91989-3_7" target="_blank">DOI</a>
+        </div>
+        <div class="abstract-popup">
+            Feature point detection and description is the backbone for various computer vision applications, 
+            such as Structure-from-Motion, visual SLAM, and visual place recognition. 
+            While learning-based methods have surpassed traditional handcrafted techniques, 
+            their training often relies on simplistic homography-based simulations of multi-view perspectives, limiting model generalisability. 
+            This paper presents a novel approach leveraging Neural Radiance Fields (NeRFs) to generate a diverse and realistic dataset consisting of indoor and outdoor scenes. 
+            Our proposed methodology adapts state-of-the-art feature detectors and descriptors for training on multi-view NeRF-synthesised data, 
+            with supervision achieved through perspective projective geometry. 
+            Experiments demonstrate that the proposed methodology achieves competitive or superior performance on standard benchmarks for relative pose estimation, 
+            point cloud registration, and homography estimation while requiring significantly less training data and time compared to existing approaches.
+        </div>
+        <div class="bibtex-popup">
+            <button class="copy-bibtex-btn" onclick="copyBibtex(this)">Copy</button>
+            <pre>
+@inproceedings{youssef2025nerf,
+  title={NeRF-Supervised Feature Point Detection and Description},
+  author={Youssef, Ali and Vasconcelos, Francisco},
+  booktitle={European Conference on Computer Vision},
+  pages={103--119},
+  year={2025},
+  organization={Springer, Cham}}
+</pre>
+        </div>
+    </div>
+</div>
+<!-- <div class="publication-separator"></div> -->
+
+<!-- Place Holder For No Figure Publication -->
+<!-- <div class="publication-item no-figure">
+        <div class="publication-image">
+            <img src="" alt="No figure for this publication"> 
+        </div>
+        <div class="publication-content">
+            <div class="publication-header">
+                <div class="publication-title">Another Publication Title (No Figure)</div>
+                <span class="venue-badge xyzw">XYZW</span>
+            </div>
+            <div class="publication-authors">Jane Doe, John Smith</div>
+            <div class="publication-venue">XYZW</div>
+            <div class="publication-links">
+                <a href="#" onclick="toggleAbstract(event)">Abstract</a>
+                <a href="#" target="_blank">PDF</a>
+                <a href="#" onclick="toggleBibtex(event)">BibTeX</a>
+            </div>
+            <div class="abstract-popup">
+                This is an abstract for a publication that does not have a figure. It demonstrates that the layout adjusts correctly without extra space.
+            </div>
+            <pre class="bibtex-popup">
+                <button class="copy-bibtex-btn" onclick="copyBibtex(this)">Copy</button>
+                @article{doe2023another,
+                title={Another Publication Title},
+                author={Doe, Jane and Smith, John},
+                journal={Journal of Example Research},
+                year={2023}
+                }</pre>
+        </div>
+    </div> -->
