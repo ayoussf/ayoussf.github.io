@@ -305,7 +305,7 @@ body.light-mode .section > h1 {
     top: 0.2rem;
     right: 1.7rem;
     font-size: 2.0rem;
-    color: #8ebab48a;
+    color: #f0f0f0;
     font-weight: bold;
     z-index: 1;
     pointer-events: none;
@@ -819,7 +819,7 @@ body.light-mode .news-section h2 { border-color: rgba(169, 113, 113, 0.532); }
 body.light-mode .publications-section h2 { border-color: rgba(169, 113, 113, 0.532); }
 body.light-mode .education-section h2 { border-color: rgba(169, 113, 113, 0.532); }
 body.light-mode .skills-section h2 { border-color: rgba(169, 113, 113, 0.532); }
-body.light-mode .publication-year { color: rgba(169, 113, 113, 0.532); }
+body.light-mode .publication-year { color: #000; }
 body.light-mode .project-category h2 { border-bottom: 2px solid rgba(169, 113, 113, 0.532); } 
 /* d7b3b3 */
 
