@@ -8,8 +8,45 @@
     <link rel="icon" type="image/x-icon" href="assests/web_icon/focus.png">
 </head>
 <body class="about-page-active">
+    <div class="bg-particles"></div>
+    <div id="digital-clock">
+        <span id="time"></span>
+        <span id="date"></span>
+    </div>
+    
     <script>
-        // Ensure about-page-active class is added immediately
+        if (!document.body.classList.contains('about-page-active')) {
+            document.body.classList.add('about-page-active');
+        }
+        
+        function updateClock() {
+            const now = new Date();
+            const timeElement = document.getElementById('time');
+            const dateElement = document.getElementById('date');
+            
+            const timeString = now.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+            
+            const dateString = now.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            if (timeElement) timeElement.textContent = timeString;
+            if (dateElement) dateElement.textContent = dateString;
+        }
+        
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+    
+    <script>
         if (!document.body.classList.contains('about-page-active')) {
             document.body.classList.add('about-page-active');
         }
@@ -104,9 +141,7 @@
         </script>
 
         <div id="projects-section"></div>
-        </script>
-            <div id="projects-section"></div>
-            <script>
+        <script>
             fetch('sections/projects/projects.html')
             .then(response => response.text())
             .then(html => {
