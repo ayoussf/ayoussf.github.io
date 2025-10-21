@@ -1132,12 +1132,12 @@ body.light-mode .project-embedded-image-container {
 
 body.light-mode .project-links a,
 body.light-mode a {
-    color: #8B3232;
+    color: #0F4880;
 }
 
 body.light-mode .project-links a:hover,
 body.light-mode a:hover {
-    color: #A85151;
+    color: #1A6DCA;
 }
 
 body.light-mode .footer {
