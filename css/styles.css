@@ -16,6 +16,7 @@ body {
 }
 
 .bg-particles {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -31,6 +32,7 @@ body {
 }
 
 .particle {
+    display: none;
     position: absolute;
     width: 2px;
     height: 2px;
@@ -945,7 +947,7 @@ body.light-mode .section > h1 {
     -webkit-backdrop-filter: blur(20px);
     padding: 1rem 0;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: -1.0rem;
     border-top: 1px solid rgba(142, 186, 180, 0.2);
     box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -1233,24 +1235,46 @@ body.light-mode .project-item2.empty-project {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 60px;
+        padding-top: 55px;
     }
     
-    .container {
-        padding: 0 15px;
+    #digital-clock {
+        top: 40px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        max-width: 280px;
+        margin: 0 auto;
+        padding: 6px 12px;
+    }
+
+    #digital-clock #time,
+    #digital-clock #date {
+        font-size: 0.7rem;
+    }
+    
+    header {
+        height: 45px;
     }
 
     .nav-links {
-        gap: 0.8rem;
-        font-size: 0.9rem;
+        gap: 0.6rem;
+        font-size: 0.7rem;
     }
 
-    .header-title {
-        font-size: 0.75rem;
+    .nav-links a {
+        font-size: 0.7rem;
+        padding: 1px 4px;
     }
 
+    .header-title,
     body:not(.about-page-active) .header-title {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+    }
+
+    .theme-toggle {
+        font-size: 0.7rem;
+        padding: 0.2rem;
     }
 
     .about-header {

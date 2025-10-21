@@ -394,4 +394,22 @@ function initScrollClock() {
     handleScroll();
 }
 
-document.addEventListener('DOMContentLoaded', initScrollClock);
+function positionClock() {
+    const container = document.querySelector('.container');
+    const clock = document.getElementById('digital-clock');
+    
+    if (container && clock) {
+        const containerRect = container.getBoundingClientRect();
+        clock.style.left = `${containerRect.left + 20}px`;
+    }
+}
+
+window.addEventListener('load', () => {
+    positionClock();
+    window.addEventListener('resize', positionClock);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initScrollClock();
+    positionClock();
+});
