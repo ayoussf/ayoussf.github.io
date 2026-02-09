@@ -1,0 +1,81 @@
+[
+  {
+    "id": "tritontorch",
+    "category": "Libraries",
+    "title": "TritonTorch",
+    "description": "TritonTorch is a differentiable, efficient, and modular open-source library of PyTorch neural network modules and operations implemented in Triton. It provides GPU-accelerated primitives that leverage Triton's low-level control and parallelism, enabling seamless integration of deep learning building blocks into workflows. The framework supports both forward and backward passes while maintaining full compatibility with PyTorch, and can be easily extended and adapted to support the needs of the deep learning research and development community.",
+    "image": "assets/project-figures/tritontorch.png",
+    "embeddedImage": "assets/project-figures/tritontorch-eval.png",
+    "tags": [
+      "Triton",
+      "PyTorch",
+      "Python"
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ayoussf/TritonTorch"
+      }
+    ]
+  },
+  {
+    "id": "msc-thesis",
+    "category": "Academic Research Projects",
+    "title": "Optimising Feature Point Detection and Description Using Novel View Synthesis (MSc Thesis)",
+    "description": "This research addressed limitations in traditional homography-based simulations used for training feature detectors in computer vision applications like SLAM and structure-from-motion. Neural Radiance Fields (NeRFs) were employed to generate photorealistic multi-view datasets with realistic viewpoints through simulated camera motions, replacing conventional homography simulations. State-of-the-art feature detectors and descriptors trained on NeRF-synthesised data with perspective projection supervision achieved superior performance on benchmarks including relative pose and homography estimation. The approach demonstrated that fully synthetic multi-view data could effectively replace traditional simulations while achieving competitive results with significantly reduced training data and computational requirements.",
+    "image": "assets/project-figures/msc.png",
+    "tags": [
+      "Computer Vision",
+      "PyTorch",
+      "JAX",
+      "Python"
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ayoussf/SuperPoint-NeRF-Pytorch"
+      },
+      {
+        "label": "Thesis",
+        "url": "https://drive.google.com/file/d/1OBa57cgQ8cJYEYNFcLqfuDlxdauFYw3r/view?usp=sharing"
+      }
+    ]
+  },
+  {
+    "id": "mt-seg",
+    "category": "Academic Research Projects",
+    "title": "Mean-Teacher Semi-Supervised Semantic Segmentation",
+    "description": "This research addressed the challenge of labelled data scarcity in binary semantic segmentation through a Semi-Supervised Learning (SSL) paradigm. The Mean Teacher semi-supervised learning algorithm with DeepLabv3-ResNet50 architecture was implemented to leverage both labelled and unlabeled data effectively. The model achieved remarkable 96.1% accuracy using only 20% labelled data, demonstrating performance comparable to fully supervised methods that require complete annotations. Comparative experiments across varying data ratios confirmed the approach's robustness in sparse labelling scenarios, while results validated SSL's effectiveness in data-scarce scenarios typical of real-world computer vision tasks.",
+    "image": "assets/project-figures/mt-seg.png",
+    "tags": [
+      "Computer Vision",
+      "PyTorch",
+      "Python"
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ayoussf/Mean-Teacher-Semi-Supervised-Semantic-Segmentation"
+      }
+    ]
+  },
+  {
+    "id": "beng-thesis",
+    "category": "Academic Research Projects",
+    "title": "Data-Centric Wind Power Forecasting via Recurrent Neural Networks (BEng Thesis)",
+    "description": "This research addressed the challenge of accurately forecasting wind turbine power output using SCADA data corrupted by sensor faults and environmental anomalies. Several outlier detection algorithms (Isolation Forest, Elliptic Envelope, DBSCAN) were implemented to filter out data anomalies, with Isolation Forest proving most effective. Using the preprocessed datasets, Recurrent Neural Networks (LSTM and GRU) were utilised for wind power regression. Both models achieved high accuracy, though GRU demonstrated superior computational efficiency. The work emphasised the critical importance of robust data preprocessing in machine learning applications.",
+    "image": "assets/project-figures/beng.png",
+    "tags": [
+      "Recurrent Neural Networks",
+      "TensorFlow",
+      "Python",
+      "Data Analysis"
+    ],
+    "links": [
+      {
+        "label": "Thesis",
+        "url": "https://drive.google.com/file/d/17ojkWeHxWVQ3VCRfHTBCjdH7C09GF4jV/view?usp=sharing"
+      }
+    ]
+  }
+]

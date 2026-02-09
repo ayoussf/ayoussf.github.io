@@ -1,166 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Youssef</title>
-    <link rel="stylesheet"  type="text/css" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="assests/web_icon/focus.png">
+    <meta name="description" content="Ali Youssef — Computer Vision Researcher. MSc Robotics and AI from UCL.">
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
 </head>
-<body class="about-page-active">
-    <div class="bg-particles"></div>
-    <div id="digital-clock">
-        <span id="time"></span>
-        <span id="date"></span>
+
+<body>
+
+    <!-- Header -->
+    <header id="site-header">
+        <nav class="container nav">
+            <a href="#home" class="nav-name">Ali Youssef</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="assets/resume/Ali_Youssef_Resume.pdf" target="_blank" rel="noopener">CV</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div id="digital-clock" aria-label="Current date and time">
+        <span id="clock-time"></span>
+        <span id="clock-separator">|</span>
+        <span id="clock-date"></span>
     </div>
-    
-    <script>
-        if (!document.body.classList.contains('about-page-active')) {
-            document.body.classList.add('about-page-active');
-        }
-        
-        function updateClock() {
-            const now = new Date();
-            const timeElement = document.getElementById('time');
-            const dateElement = document.getElementById('date');
-            
-            const timeString = now.toLocaleTimeString('en-US', {
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: false
-            });
-            
-            const dateString = now.toLocaleDateString('en-US', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            
-            if (timeElement) timeElement.textContent = timeString;
-            if (dateElement) dateElement.textContent = dateString;
-        }
-        
-        updateClock();
-        setInterval(updateClock, 1000);
-    </script>
-    
-    <script>
-        if (!document.body.classList.contains('about-page-active')) {
-            document.body.classList.add('about-page-active');
-        }
-    </script>
-        <div id="header"></div>
-        <script>
-        fetch('sections/header/header.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('header').innerHTML = html;
-        });
-    </script>
 
-    <main class="container">
-        <section id="about" class="section active">
-            
-            <div id="about-section"></div>
-            <script>
-                fetch('sections/about/about.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('about-section').innerHTML = html;
-                });
-            </script>
-            
-            <div id="news-section"></div>
-            <script>
-                fetch('sections/news/news.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('news-section').innerHTML = html;
-                });
-            </script>
-
-            <div id="publications_about"></div>
-            <script>
-                fetch('sections/publications/publications_about.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('publications_about').innerHTML = html;
-
-                    fetch('sections/publications/2025/pub_2025.html')
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById('pubs_about_2025').innerHTML = html;
-                    });
-
-                    fetch('sections/publications/2024/pub_2024.html')
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById('pubs_about_2024').innerHTML = html;
-                    });
-                });
-            </script>
-
-            <div id="education-section"></div>
-            <script>
-                fetch('sections/education/education.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('education-section').innerHTML = html;
-                });
-            </script>
-
-            <div id="skills-section"></div>
-            <script>
-                fetch('sections/skills/skills.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('skills-section').innerHTML = html;
-                });
-            </script>
+    <main>
+        <!-- Home -->
+        <section id="home" class="section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-profile">
+                        <img src="assets/portrait/portrait.jpg" alt="Ali Youssef" class="profile-img" width="250"
+                            height="250">
+                        <div class="social-links">
+                            <a href="mailto:ali_m_youssef@outlook.com" aria-label="Email" title="Email">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </a>
+                            <a href="https://linkedin.com/in/ali-youssef1" target="_blank" rel="noopener"
+                                aria-label="LinkedIn" title="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/ayoussf" target="_blank" rel="noopener" aria-label="GitHub"
+                                title="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.08-.737.08-.721.08-.721 1.192.083 1.819 1.229 1.819 1.229 1.064 1.817 2.809 1.299 3.497.994.108-.773.418-1.299.762-1.599-2.665-.304-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.118-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.292-1.552 3.3-.878 3.3-.878.654 1.652.243 2.873.121 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.923.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.196-6.086 8.196-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://scholar.google.com/citations?hl=en&user=pNfoGTgAAAAJ" target="_blank"
+                                rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h1 id="about-name">Ali Youssef</h1>
+                        <p class="affiliation">MSc Robotics and Computation (Artificial Intelligence) at University
+                            College London</p>
+                        <div class="bio">
+                            <p>I am a recent MSc graduate in Robotics and Computation (Artificial Intelligence) with
+                                Distinction from <a href="https://www.ucl.ac.uk/" target="_blank"
+                                    rel="noopener">University College London</a> (UCL) with a
+                                passion for 3D Computer Vision and Geometry. My research interests lie at the
+                                intersection of Machine
+                                Learning and Computer Vision, particularly in 3D Mapping and Reconstruction, Visual
+                                Localisation, and Novel
+                                View Synthesis. Prior to my postgraduate studies, I completed my BEng in Mechanical
+                                Engineering with
+                                First-Class Honours from the <a href="https://www.gla.ac.uk/" target="_blank"
+                                    rel="noopener">University of
+                                    Glasgow</a>.</p>
+                            <p>I recently started an internship as a Computer Vision Researcher at Spatial Intelligence.
+                                Moreover, following
+                                my MSc graduation, I worked as an independent researcher in collaboration with my MSc
+                                supervisor, <a href="https://www.ucl.ac.uk/surgical-robot-vision/francisco-vasconcelos"
+                                    target="_blank" rel="noopener">Dr. Francisco Vasconcelos</a>, further expanding upon
+                                my thesis work, leading to
+                                "NeRF-Supervised Feature Point Detection and Description", a research paper accepted at
+                                ECCV 2024: Map-free
+                                Visual Relocalization Workshop.</p>
+                            <p>Outside of research, I recently developed a deep interest in computational efficiency and
+                                low-level
+                                programming. This curiosity led me to explore writing Triton kernels, initially as a
+                                learning exercise, but
+                                it has grown into a genuine hobby, which led to the <a
+                                    href="projects.html#tritontorch">TritonTorch
+                                    Library</a>. I generally enjoy coding and deconstructing the latest research to
+                                explore how new
+                                techniques might be adapted across different domains, especially in computer vision.</p>
+                            <p>I am actively seeking research-based opportunities. Please feel free to reach out to me
+                                via <a href="mailto:ali_m_youssef@outlook.com">email</a> or connect with me on <a
+                                    href="https://linkedin.com/in/ali-youssef1" target="_blank"
+                                    rel="noopener">LinkedIn</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        
-        <div id="publications-section"></div>
-        <script>
-            fetch('sections/publications/publications.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('publications-section').innerHTML = html;
-                fetch('sections/publications/2025/pub_2025.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('pubs_2025').innerHTML = html;
-                });
-                fetch('sections/publications/2024/pub_2024.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('pubs_2024').innerHTML = html;
-                });
-            });
-        </script>
 
-        <div id="projects-section"></div>
-        <script>
-            fetch('sections/projects/projects.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('projects-section').innerHTML = html;
-            });
-        </script>
-        
+        <!-- News -->
+        <section id="news" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">News</h2>
+                <div id="news-list" class="news-list"></div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Publications</h2>
+                <div id="publications-list"></div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-list">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>University College London (UCL)</h3>
+                            <span class="education-location">London, United Kingdom</span>
+                        </div>
+                        <div class="degree-line">
+                            <p class="degree">Master of Science (MSc) in Robotics and Computation (Artificial
+                                Intelligence)</p>
+                            <span class="dates">Sep. 2022 – Sep. 2023</span>
+                        </div>
+                        <p class="supervisor">Supervisor: <a
+                                href="https://www.ucl.ac.uk/surgical-robot-vision/francisco-vasconcelos">Dr. Francisco
+                                Vasconcelos</a></p>
+                        <p class="classification">Classification: Distinction.</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>University of Glasgow</h3>
+                            <span class="education-location">Glasgow, United Kingdom</span>
+                        </div>
+                        <div class="degree-line">
+                            <p class="degree">Bachelor of Engineering (BEng) in Mechanical Engineering</p>
+                            <span class="dates">Sep. 2016 – Jun. 2020</span>
+                        </div>
+                        <p class="classification">Classification: First-Class Honours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">MATLAB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Deep Learning Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Triton</span>
+                            <span class="tag">JAX</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Robotics</h3>
+                        <div class="skill-tags">
+                            <span class="tag">ROS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Cloud Computing</h3>
+                        <div class="skill-tags">
+                            <span class="tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script src="js/script.js"></script>
-
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; <span id="current-year"></span> Ali Youssef.</p>
-            <script>
-                document.getElementById('current-year').textContent = new Date().getFullYear();
-            </script>
         </div>
     </footer>
-    
+
+    <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,75 @@
+[
+  {
+    "id": "vmatcher-2025",
+    "year": 2025,
+    "title": "VMatcher: State-Space Semi-Dense Local Feature Matching",
+    "authors": [
+      "<strong>Ali Youssef</strong>"
+    ],
+    "venue": "arXiv preprint (arXiv:2507.23371).",
+    "venueBadge": "arXiv",
+    "image": "assets/paper-figures/vmatcher.png",
+    "imageAlt": "VMatcher Figure",
+    "links": [
+      {
+        "label": "Abstract",
+        "type": "toggle"
+      },
+      {
+        "label": "PDF",
+        "url": "https://arxiv.org/pdf/2507.23371"
+      },
+      {
+        "label": "Code",
+        "url": "https://github.com/ayoussf/VMatcher"
+      },
+      {
+        "label": "BibTeX",
+        "type": "toggle"
+      }
+    ],
+    "abstract": "This paper introduces VMatcher, a hybrid Mamba-Transformer network for semi-dense feature matching between image pairs. Learning-based feature matching methods, whether detector-based or detector-free, achieve state-of-the-art performance but depend heavily on the Transformer's attention mechanism, which, while effective, incurs high computational costs due to its quadratic complexity. In contrast, Mamba introduces a Selective State-Space Model (SSM) that achieves comparable or superior performance with linear complexity, offering significant efficiency gains. VMatcher leverages a hybrid approach, integrating Mamba's highly efficient long-sequence processing with the Transformer's attention mechanism. Multiple VMatcher configurations are proposed, including hierarchical architectures, demonstrating their effectiveness in setting new benchmarks efficiently while ensuring robustness and practicality for real-time applications where rapid inference is crucial.",
+    "bibtex": "@misc{youssef2025vmatcherstatespacesemidenselocal,\n      title={VMatcher: State-Space Semi-Dense Local Feature Matching},\n      author={Ali Youssef},\n      year={2025},\n      eprint={2507.23371},\n      archivePrefix={arXiv},\n      primaryClass={cs.CV},\n      url={https://arxiv.org/abs/2507.23371},\n}"
+  },
+  {
+    "id": "nerf-supervised-2024",
+    "year": 2024,
+    "title": "NeRF-Supervised Feature Point Detection and Description",
+    "authors": [
+      "<strong>Ali Youssef</strong>",
+      "Francisco Vasconcelos"
+    ],
+    "venue": "European Conference on Computer Vision (ECCV) 2024: Map-free Visual Relocalization Workshop.",
+    "venueBadge": "ECCVW",
+    "image": "assets/paper-figures/nsdd.png",
+    "imageAlt": "NeRF-Supervised Feature Point Detection figure",
+    "links": [
+      {
+        "label": "Abstract",
+        "type": "toggle"
+      },
+      {
+        "label": "PDF",
+        "url": "https://arxiv.org/pdf/2403.08156"
+      },
+      {
+        "label": "DOI",
+        "url": "https://doi.org/10.1007/978-3-031-91989-3_7"
+      },
+      {
+        "label": "Code 1",
+        "url": "https://github.com/ayoussf/SuperPoint-PrP"
+      },
+      {
+        "label": "Code 2",
+        "url": "https://github.com/ayoussf/SiLK-PrP"
+      },
+      {
+        "label": "BibTeX",
+        "type": "toggle"
+      }
+    ],
+    "abstract": "Feature point detection and description is the backbone for various computer vision applications, such as Structure-from-Motion, visual SLAM, and visual place recognition. While learning-based methods have surpassed traditional handcrafted techniques, their training often relies on simplistic homography-based simulations of multi-view perspectives, limiting model generalisability. This paper presents a novel approach leveraging Neural Radiance Fields (NeRFs) to generate a diverse and realistic dataset consisting of indoor and outdoor scenes. Our proposed methodology adapts state-of-the-art feature detectors and descriptors for training on multi-view NeRF-synthesised data, with supervision achieved through perspective projective geometry. Experiments demonstrate that the proposed methodology achieves competitive or superior performance on standard benchmarks for relative pose estimation, point cloud registration, and homography estimation while requiring significantly less training data and time compared to existing approaches.",
+    "bibtex": "@InProceedings{10.1007/978-3-031-91989-3_7,\n               author=\"Youssef, Ali\n               and Vasconcelos, Francisco\",\n               editor=\"Del Bue, Alessio\n               and Canton, Cristian\n               and Pont-Tuset, Jordi\n               and Tommasi, Tatiana\",\n               title=\"NeRF-Supervised Feature Point Detection and Description\",\n               booktitle=\"Computer Vision -- ECCV 2024 Workshops\",\n               year=\"2025\",\n               publisher=\"Springer Nature Switzerland\",\n               address=\"Cham\",\n               pages=\"103--119\",\n               isbn=\"978-3-031-91989-3\"\n}"
+  }
+]
