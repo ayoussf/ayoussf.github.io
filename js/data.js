@@ -7,7 +7,8 @@ function escapeHTML(str) {
 // ── Publications ──
 
 export async function loadPublications() {
-  const res = await fetch('data/publications.json');
+  const isSubfolder = window.location.pathname.includes('/publications/') || window.location.pathname.includes('/projects/');
+  const res = await fetch(isSubfolder ? '../data/publications.json' : 'data/publications.json');
   const pubs = await res.json();
   const container = document.getElementById('publications-list');
   if (!container) return;
@@ -41,6 +42,8 @@ export async function loadPublications() {
 }
 
 function createPubCard(pub) {
+  const isSubfolder = window.location.pathname.includes('/publications/') || window.location.pathname.includes('/projects/');
+  const imagePath = (isSubfolder && pub.image && !pub.image.startsWith('http')) ? `../${pub.image}` : pub.image;
   const card = document.createElement('div');
   card.className = 'pub-card';
 
@@ -57,7 +60,7 @@ function createPubCard(pub) {
   }).join('');
 
   card.innerHTML = `
-    ${pub.image ? `<img src="${pub.image}" alt="${pub.imageAlt}" class="pub-image" loading="lazy">` : ''}
+    ${imagePath ? `<img src="${imagePath}" alt="${pub.imageAlt}" class="pub-image" loading="lazy">` : ''}
     <div class="pub-content">
       <div class="pub-title-row">
         <h4 class="pub-title">${pub.title}</h4>
@@ -115,7 +118,8 @@ function createPubCard(pub) {
 // ── Projects ──
 
 export async function loadProjects() {
-  const res = await fetch('data/projects.json');
+  const isSubfolder = window.location.pathname.includes('/publications/') || window.location.pathname.includes('/projects/');
+  const res = await fetch(isSubfolder ? '../data/projects.json' : 'data/projects.json');
   const projects = await res.json();
   const container = document.getElementById('projects-list');
   if (!container) return;
@@ -143,6 +147,7 @@ export async function loadProjects() {
 }
 
 function createProjectCard(project) {
+  const isSubfolder = window.location.pathname.includes('/publications/') || window.location.pathname.includes('/projects/');
   const card = document.createElement('details');
   card.className = 'project-card';
   card.id = project.id;
@@ -154,9 +159,11 @@ function createProjectCard(project) {
 
   let embeddedHTML = '';
   if (project.embeddedImage) {
-    embeddedHTML = `<img src="${project.embeddedImage}" alt="${project.title} evaluation" class="project-embedded-img" loading="lazy">`;
+    const embeddedPath = (isSubfolder && !project.embeddedImage.startsWith('http')) ? `../${project.embeddedImage}` : project.embeddedImage;
+    embeddedHTML = `<img src="${embeddedPath}" alt="${project.title} evaluation" class="project-embedded-img" loading="lazy">`;
   }
 
+  const thumbPath = (isSubfolder && project.image && !project.image.startsWith('http')) ? `../${project.image}` : project.image;
   const summary = document.createElement('summary');
   summary.className = 'project-summary';
   summary.innerHTML = `
@@ -164,7 +171,7 @@ function createProjectCard(project) {
       <h4 class="project-title">${project.title}</h4>
       <div class="project-summary-tags">${tagsHTML}</div>
     </div>
-    <img src="${project.image}" alt="${project.title}" class="project-thumb" loading="lazy">
+    <img src="${thumbPath}" alt="${project.title}" class="project-thumb" loading="lazy">
     <span class="project-expand-icon"></span>
   `;
   card.appendChild(summary);
@@ -188,7 +195,8 @@ function createProjectCard(project) {
 // ── Publications (grouped by year, flat cards — no dropdown) ──
 
 export async function loadPublicationsFlat() {
-  const res = await fetch('data/publications.json');
+  const isSubfolder = window.location.pathname.includes('/publications/') || window.location.pathname.includes('/projects/');
+  const res = await fetch(isSubfolder ? '../data/publications.json' : 'data/publications.json');
   const pubs = await res.json();
   const container = document.getElementById('publications-list');
   if (!container) return;
@@ -218,7 +226,8 @@ export async function loadPublicationsFlat() {
 // ── Projects (full cards, no dropdown) ──
 
 export async function loadProjectsFull() {
-  const res = await fetch('data/projects.json');
+  const isSubfolder = window.location.pathname.includes('/publications/') || window.location.pathname.includes('/projects/');
+  const res = await fetch(isSubfolder ? '../data/projects.json' : 'data/projects.json');
   const projects = await res.json();
   const container = document.getElementById('projects-list');
   if (!container) return;
@@ -253,6 +262,7 @@ export async function loadProjectsFull() {
 }
 
 function createProjectCardFull(project) {
+  const isSubfolder = window.location.pathname.includes('/publications/') || window.location.pathname.includes('/projects/');
   const card = document.createElement('details');
   card.className = 'project-card-full';
   card.id = project.id;
@@ -267,10 +277,11 @@ function createProjectCardFull(project) {
   }).join('');
 
   // Summary: image + title + expand hint
+  const thumbPath = (isSubfolder && project.image && !project.image.startsWith('http')) ? `../${project.image}` : project.image;
   const summary = document.createElement('summary');
   summary.className = 'project-full-summary';
   summary.innerHTML = `
-    <img src="${project.image}" alt="${project.title}" class="project-full-image${project.embeddedImage ? ' project-full-image-cover' : ''}" loading="lazy">
+    <img src="${thumbPath}" alt="${project.title}" class="project-full-image${project.embeddedImage ? ' project-full-image-cover' : ''}" loading="lazy">
     <div class="project-full-header">
       <h3 class="project-full-title">${project.title}</h3>
       <span class="project-full-hint">Click to expand</span>
@@ -288,6 +299,7 @@ function createProjectCardFull(project) {
   content.className = 'project-full-content';
 
   if (project.embeddedImage) {
+    const embeddedPath = (isSubfolder && !project.embeddedImage.startsWith('http')) ? `../${project.embeddedImage}` : project.embeddedImage;
     content.innerHTML = `
       <div class="project-full-split">
         <div class="project-full-desc">
@@ -295,7 +307,7 @@ function createProjectCardFull(project) {
           <div class="project-tags">${tagsHTML}</div>
           <div class="project-links">${linksHTML}</div>
         </div>
-        <img src="${project.embeddedImage}" alt="${project.title} evaluation" class="project-full-embedded" loading="lazy">
+        <img src="${embeddedPath}" alt="${project.title} evaluation" class="project-full-embedded" loading="lazy">
       </div>
     `;
   } else {
@@ -316,7 +328,8 @@ function createProjectCardFull(project) {
 const NEWS_VISIBLE_COUNT = 5;
 
 export async function loadNews() {
-  const res = await fetch('data/news.json');
+  const isSubfolder = window.location.pathname.includes('/publications/') || window.location.pathname.includes('/projects/');
+  const res = await fetch(isSubfolder ? '../data/news.json' : 'data/news.json');
   const news = await res.json();
   const container = document.getElementById('news-list');
   if (!container) return;
